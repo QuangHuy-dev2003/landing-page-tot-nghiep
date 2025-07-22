@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chúc mừng ngày tốt nghiệp!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <audio id="bg-music" src="music.mp3" autoplay loop></audio>
+    <header class="hero" style="background-image: url('images/img-1.jpg')">
+      <div class="hero-overlay">
+        <h1 class="hero-title animate__animated animate__fadeInDown">
+          🎓 Chúc mừng em - ngày rực rỡ nhất!
+        </h1>
+        <p class="hero-sub animate__animated animate__fadeInUp">
+          Em là niềm tự hào của gia đình và của chính em.
+        </p>
+      </div>
+      <button id="music-toggle" aria-label="Tắt/mở nhạc nền">
+        <span id="music-icon">🔊</span>
+      </button>
+    </header>
+
+    <section id="zigzag-photos">
+      <div class="zigzag-row">
+        <div class="zigzag-img left" data-aos="fade-right">
+          <img src="images/img-2.jpg" alt="img-2" data-popup="2" />
+          <p class="caption">Em đã làm được rồi, cô gái nhỏ của anh 💪</p>
+        </div>
+        <div class="zigzag-img right" data-aos="fade-left">
+          <img src="images/img-3.jpg" alt="img-3" data-popup="3" />
+          <p class="caption">Khoảnh khắc ấy – em và chiếc mũ cử nhân 🎓</p>
+        </div>
+      </div>
+      <div class="zigzag-row">
+        <div class="zigzag-img left" data-aos="fade-right">
+          <img src="images/img-4.jpg" alt="img-4" data-popup="4" />
+          <p class="caption">
+            Chặng đường kết thúc, nhưng hành trình mới bắt đầu 🚀
+          </p>
+        </div>
+        <div class="zigzag-img right" data-aos="fade-left">
+          <img src="images/img-5.jpg" alt="img-5" data-popup="5" />
+          <p class="caption">Gửi em – tất cả sự tự hào và yêu thương ❤️</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="thank-you">
+      <h2 class="section-title" data-aos="fade-up">💌 Lời cảm ơn</h2>
+      <p data-aos="fade-up" data-aos-delay="100">
+        Cảm ơn gia đình, thầy cô và bạn bè đã luôn yêu thương và đồng hành cùng
+        em trong suốt chặng đường đại học.
+      </p>
+      <p data-aos="fade-up" data-aos-delay="200">
+        Hôm nay, em tốt nghiệp – không chỉ là thành quả của riêng em, mà còn là
+        món quà tri ân đến những người đã luôn bên cạnh.
+      </p>
+      <p data-aos="fade-up" data-aos-delay="300">
+        Mong rằng album nhỏ này sẽ là một kỷ niệm đẹp gửi đến tất cả mọi người
+        💖
+      </p>
+    </section>
+
+    <section id="memorable-moments">
+      <h2 class="section-title" data-aos="fade-up">Khoảnh khắc đáng nhớ</h2>
+      <div class="memorable-grid">
+        <div class="memorable-item" data-aos="zoom-in" data-aos-delay="100">
+          <img src="images/img-1.jpg" alt="img-1" data-popup="1" />
+        </div>
+        <div class="memorable-item" data-aos="zoom-in" data-aos-delay="200">
+          <img src="images/img-2.jpg" alt="img-2" data-popup="2" />
+        </div>
+        <div class="memorable-item" data-aos="zoom-in" data-aos-delay="300">
+          <img src="images/img-3.jpg" alt="img-3" data-popup="3" />
+        </div>
+        <div class="memorable-item" data-aos="zoom-in" data-aos-delay="400">
+          <img src="images/img-4.jpg" alt="img-4" data-popup="4" />
+        </div>
+        <div class="memorable-item" data-aos="zoom-in" data-aos-delay="500">
+          <img src="images/img-5.jpg" alt="img-5" data-popup="5" />
+        </div>
+        <div class="memorable-item" data-aos="zoom-in" data-aos-delay="600">
+          <img src="images/img-6.jpg" alt="img-6" data-popup="6" />
+        </div>
+        <div class="memorable-item" data-aos="zoom-in" data-aos-delay="700">
+          <img src="images/img-7.jpg" alt="img-7" data-popup="7" />
+        </div>
+        <div class="memorable-item" data-aos="zoom-in" data-aos-delay="800">
+          <img src="images/img-8.jpg" alt="img-8" data-popup="8" />
+        </div>
+      </div>
+      <div class="center-btn">
+        <a
+          href="gallery.html"
+          class="gallery-link"
+          data-aos="fade-up"
+          data-aos-delay="900"
+          >Xem tất cả ảnh</a
+        >
+      </div>
+      <div id="img-popup" class="popup-overlay" style="display: none">
+        <div class="popup-content">
+          <span class="popup-close">&times;</span>
+          <img id="popup-img" src="" alt="popup" />
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
