@@ -224,6 +224,7 @@
                 img.src = `images/${images[i]}`;
                 img.alt = images[i];
                 img.setAttribute("data-popup", images[i]);
+                img.loading = "lazy";
                 img.onerror = function () {
                   div.style.display = "none";
                 };

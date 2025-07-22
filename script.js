@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Áp dụng cho cả memorable và zigzag
   [...document.querySelectorAll("img[data-popup]")].forEach((img) => {
+    img.setAttribute("loading", "lazy");
     img.addEventListener("click", () => openPopup(img.src));
   });
 
