@@ -437,14 +437,22 @@ footer {
 }
 @media (max-width: 700px) {
   .popup-content img {
-    max-width: 98vw;
-    max-height: 65vh;
+    max-width: 99vw;
+    max-height: 80vh;
+  }
+  .popup-content {
+    padding: 0.4rem;
+    border-radius: 10px;
   }
 }
 @media (max-width: 500px) {
   .popup-content img {
     max-width: 99vw;
-    max-height: 55vh;
+    max-height: 85vh;
+  }
+  .popup-content {
+    padding: 0.2rem;
+    border-radius: 6px;
   }
 }
 
@@ -598,4 +606,60 @@ footer {
     height: 55vh; /* tăng chiều cao nếu cần */
     min-height: 420px;
   }
+}
+
+@media (max-width: 900px) {
+  .memorable-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .memorable-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .memorable-item img {
+    height: auto;
+    max-height: 60vw;
+    min-height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+  .memorable-item {
+    border-radius: 16px;
+    margin-bottom: 0.7rem;
+  }
+}
+
+.pagination {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+@media (max-width: 600px) {
+  .pagination {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 8px;
+    margin-left: -4px;
+    margin-right: -4px;
+    scrollbar-width: none;
+  }
+  .pagination::-webkit-scrollbar {
+    display: none;
+  }
+  .pagination button {
+    min-width: 32px;
+    height: 32px;
+    font-size: 1rem;
+    border-radius: 12px;
+    margin: 0 1px;
+    padding: 0 6px;
+  }
+}
+.pagination button[disabled]:not(:first-child):not(:last-child) {
+  background: #f72585;
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid #fff;
 }

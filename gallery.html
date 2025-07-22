@@ -69,6 +69,38 @@
         color: #fff;
         cursor: not-allowed;
       }
+      @media (max-width: 600px) {
+        .pagination {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          padding: 0 4px;
+          margin-left: -2px;
+          margin-right: -2px;
+          scrollbar-width: none;
+        }
+        .pagination::-webkit-scrollbar {
+          display: none;
+        }
+        .pagination button {
+          min-width: 22px;
+          height: 22px;
+          font-size: 0.85rem;
+          border-radius: 8px;
+          margin: 0 1px;
+          padding: 0 3px;
+          box-shadow: 0 1px 4px rgba(58, 12, 163, 0.06);
+        }
+        .pagination button:disabled {
+          background: #ccc;
+          color: #fff;
+        }
+      }
+      .pagination button[disabled]:not(:first-child):not(:last-child) {
+        background: #f72585;
+        color: #fff;
+        font-weight: bold;
+        border: 2px solid #fff;
+      }
       .back-btn {
         display: inline-block;
         margin: 2rem auto 0 auto;
@@ -170,35 +202,45 @@
           function renderPagination() {
             pagination.innerHTML = "";
             const totalPages = Math.ceil(images.length / perPage);
-            const prevBtn = document.createElement("button");
-            prevBtn.innerHTML = "&lt;";
-            prevBtn.disabled = currentPage === 1;
-            prevBtn.onclick = () => {
-              currentPage--;
-              renderGallery(currentPage);
-              renderPagination();
-            };
-            pagination.appendChild(prevBtn);
-            for (let i = 1; i <= totalPages; i++) {
-              const btn = document.createElement("button");
-              btn.textContent = i;
-              if (i === currentPage) btn.disabled = true;
-              btn.onclick = () => {
-                currentPage = i;
-                renderGallery(currentPage);
-                renderPagination();
-              };
-              pagination.appendChild(btn);
+            let pages = [];
+            if (totalPages <= 5) {
+              for (let i = 1; i <= totalPages; i++) pages.push(i);
+            } else {
+              if (currentPage <= 3) {
+                pages = [1, 2, 3, "...", totalPages];
+              } else if (currentPage >= totalPages - 2) {
+                pages = [1, "...", totalPages - 2, totalPages - 1, totalPages];
+              } else {
+                pages = [
+                  1,
+                  "...",
+                  currentPage - 1,
+                  currentPage,
+                  currentPage + 1,
+                  "...",
+                  totalPages,
+                ];
+              }
             }
-            const nextBtn = document.createElement("button");
-            nextBtn.innerHTML = "&gt;";
-            nextBtn.disabled = currentPage === totalPages;
-            nextBtn.onclick = () => {
-              currentPage++;
-              renderGallery(currentPage);
-              renderPagination();
-            };
-            pagination.appendChild(nextBtn);
+            pages.forEach((p) => {
+              if (p === "...") {
+                const span = document.createElement("span");
+                span.textContent = "...";
+                span.style.margin = "0 4px";
+                span.style.color = "#f72585";
+                pagination.appendChild(span);
+              } else {
+                const btn = document.createElement("button");
+                btn.textContent = p;
+                if (p === currentPage) btn.disabled = true;
+                btn.onclick = () => {
+                  currentPage = p;
+                  renderGallery(currentPage);
+                  renderPagination();
+                };
+                pagination.appendChild(btn);
+              }
+            });
           }
 
           // Popup
