@@ -700,3 +700,29 @@ footer {
     border-radius: 4px;
   }
 }
+
+/* Fix aliasing/jagged edges for all images */
+img,
+.gallery-img img,
+.memorable-item img,
+.zigzag-img img,
+.popup-content img {
+  image-rendering: auto;
+  image-rendering: smooth;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: high-quality;
+
+  display: block;
+}
+
+/* Đảm bảo bo góc không gây răng cưa */
+.gallery-img img,
+.popup-content img,
+.memorable-item img,
+.zigzag-img img {
+  border-radius: 18px 18px 0 0;
+
+  overflow: hidden;
+}
